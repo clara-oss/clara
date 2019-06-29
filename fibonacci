@@ -1,0 +1,49 @@
+< ! DOCTYPE html >
+< html lang = " es " >
+< cabeza >
+    < meta charset = " UTF-8 " >
+    < meta name = " viewport " content = " width = device-width, initial-scale = 1.0 " >
+    < meta http - equiv = " X-UA-Compatible " content = " ie = edge " >
+    < título > Fibonacci Solver < / título >
+< / cabeza >
+< cuerpo >
+    
+< / cuerpo >
+< script >
+var sumaPares =  2 ;
+const  MAXIMO  =  100 ;
+
+var resultado = {
+    suma : 2 ,
+    numerosPares : [ 2 ],
+    numerosimpares : [ 1 ],
+    todos : [ 1 , 2 ]
+}
+var  esPar  =  function ( numero ) {
+    si (numero % 2  ===  0 ) {
+        volver  verdadera ;
+    } else {
+        volver  falsa ;
+    }
+}
+var  generadorFibonacci  =  función ( anterior , ultimo ) {
+    if (anterior + ultimo >  MAXIMO ) {
+        retorno  m resultado . SUMA ;
+    } else {
+        nuevo = anterior + ultimo;
+        if ( esPar (nuevo)) {
+            m resultado . numerosPares . empujar (nuevo);
+            
+            m resultado . suma  + = nuevo;
+        }
+        m resultado . numerosImpares . empujar (nuevo);
+        m resultado . Todos . empujar (nuevo);
+        volver  generadorFibonacci (ultimo, nuevo);
+    }
+}
+// Prueba con numeros de la serie menores a 100
+// serie: 1,2,3,5,8,13,21,34,55,89
+// suma pares: 44
+consola . log ( " suma de pares de serie Fibonacci: "  +  generadorFibonacci ( 1 , 2 ));
+< / script >
+< / html >
